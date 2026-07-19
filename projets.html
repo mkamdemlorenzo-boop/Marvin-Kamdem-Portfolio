@@ -170,21 +170,22 @@ footer a { color:var(--accent); }
   .reveal { opacity:1; transform:none; }
   * { transition:none !important; animation:none !important; }
 }
-</style>
+
+.proj-card-link{display:block;text-decoration:none;color:inherit;}
+.proj-card-link:hover .proj-card{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 16px 48px var(--glow);}
+  </style>
 </head>
 <body>
-<header>
-  <nav class="navbar">
+<header><nav class="navbar">
     <a href="index.html" class="logo">MK<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="index.html" >Accueil</a></li>
-      <li><a href="projets.html" class='active'>Projets</a></li>
-      <li><a href="contact.html" >Contact</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html" class="active">Projets</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="CV_Marvin_Kamdem_Alternance_CAO3D.pdf" class="nav-cta" download>CV ↓</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Menu">☰</button>
-  </nav>
-</header>
+  </nav></header>
 <div class="page-header">
   <p class="section-eye">Portfolio</p>
   <h1>Mes Projets</h1>
@@ -197,18 +198,80 @@ footer a { color:var(--accent); }
     <button class="filter-btn" data-filter="acad">Académique</button>
   </div>
   <div class="projects-grid">
-    <div class="proj-card reveal" data-cat="perso"><div class="proj-img" style="--c1:#0B1A2E;--c2:#1A5C8A;"><img src="bras-robotise.jpg" alt="Bras Robotisé" loading="lazy" onerror="this.style.display='none'"></div><div class="proj-body"><span class="proj-badge badge-perso">Personnel</span><h3>Bras Robotisé avec Pince</h3><p>Conception 3D complète d'un bras robotisé multi-axes avec cotation ISO, contraintes d'assemblage et simulation cinématique intégrale sur SolidWorks.</p><div class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Simulation</span><span class="proj-tag">Cotation ISO</span></div></div></div>
-    <div class="proj-card reveal" data-cat="perso"><div class="proj-img" style="--c1:#1A1230;--c2:#4A2E8A;"><img src="jet-engine.jpg" alt="Jet Engine" loading="lazy" onerror="this.style.display='none'"></div><div class="proj-body"><span class="proj-badge badge-perso">Personnel</span><h3>Jet Engine</h3><p>Modélisation 3D intégrale d'un moteur à réaction avec simulation d'assemblage et vérification des interférences sur SolidWorks.</p><div class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Assemblage complexe</span></div></div></div>
-    <div class="proj-card reveal" data-cat="perso"><div class="proj-img" style="--c1:#0E2210;--c2:#1A6A3A;"><img src="moteur-4cyl.jpg" alt="Moteur 4 Cylindres" loading="lazy" onerror="this.style.display='none'"></div><div class="proj-body"><span class="proj-badge badge-perso">Personnel</span><h3>Moteur 4 Cylindres</h3><p>Conception 3D d'un moteur à combustion interne 4 cylindres avec cotation ISO stricte et simulation mécanique complète.</p><div class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Cotation ISO</span></div></div></div>
-    <div class="proj-card reveal" data-cat="perso"><div class="proj-img" style="--c1:#1A0E2E;--c2:#5C2A8A;"><img src="maison-connectee.jpg" alt="Maison Connectée" loading="lazy" onerror="this.style.display='none'"></div><div class="proj-body"><span class="proj-badge badge-perso">Personnel</span><h3>Maison Connectée — Accès Sécurisé</h3><p>Prototype à double authentification RFID + PIN. Servo-moteur pour la serrure, OLED pour retour utilisateur. Conçu sur Cirkit AI et réalisé physiquement.</p><div class="proj-tags"><span class="proj-tag">ESP32</span><span class="proj-tag">RFID MFRC522</span><span class="proj-tag">Double Auth</span><span class="proj-tag">Servo</span></div></div></div>
-    <div class="proj-card reveal" data-cat="acad"><div class="proj-img" style="--c1:#0B1F2A;--c2:#1A5C4A;"><img src="robot-mobile.jpg" alt="MODULUX" loading="lazy" onerror="this.style.display='none'"></div><div class="proj-body"><span class="proj-badge badge-acad">Académique · Jury ✓</span><h3>MODULUX — Base Roulante Autonome</h3><p>Base roulante autonome avec châssis 3D imprimé, ESP32, L298N, batterie LiPo 5200mAh et mécanisme de balayage. Projet modulaire présenté devant jury.</p><div class="proj-tags"><span class="proj-tag">ESP32</span><span class="proj-tag">L298N</span><span class="proj-tag">SolidWorks</span><span class="proj-tag">Jury ✓</span></div></div></div>
+
+    <div data-cat="perso" class="reveal">
+    <a href="bras-robotise.html" class="proj-card-link">
+      <div class="proj-card">
+        <div class="proj-img" style="--c1:#0B1A2E;--c2:#1A5C8A;"><img src="bras-robotise.jpg" alt="Bras Robotisé" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="proj-body">
+          <span class="proj-badge badge-perso">Personnel</span>
+          <h3>Bras Robotisé avec Pince</h3>
+          <p>Conception 3D multi-axes avec cotation ISO, contraintes d'assemblage et simulation cinématique intégrale sur SolidWorks.</p>
+          <div class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Simulation</span><span class="proj-tag">Cotation ISO</span></div>
+        </div>
+      </div>
+    </a></div>
+
+    <div data-cat="perso" class="reveal">
+    <a href="jet-engine.html" class="proj-card-link">
+      <div class="proj-card">
+        <div class="proj-img" style="--c1:#1A1230;--c2:#4A2E8A;"><img src="jet-engine.jpg" alt="Jet Engine" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="proj-body">
+          <span class="proj-badge badge-perso">Personnel</span>
+          <h3>Jet Engine</h3>
+          <p>Modélisation 3D intégrale d'un moteur à réaction avec simulation d'assemblage et vérification des interférences.</p>
+          <div class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Assemblage complexe</span></div>
+        </div>
+      </div>
+    </a></div>
+
+    <div data-cat="perso" class="reveal">
+    <a href="moteur-4cyl.html" class="proj-card-link">
+      <div class="proj-card">
+        <div class="proj-img" style="--c1:#0E2210;--c2:#1A6A3A;"><img src="moteur-4cyl.jpg" alt="Moteur 4 Cylindres" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="proj-body">
+          <span class="proj-badge badge-perso">Personnel</span>
+          <h3>Moteur 4 Cylindres</h3>
+          <p>Conception 3D d'un moteur à combustion interne 4 cylindres avec cotation ISO stricte et simulation mécanique complète.</p>
+          <div class="proj-tags"><span class="proj-tag">SolidWorks</span><span class="proj-tag">Cotation ISO</span></div>
+        </div>
+      </div>
+    </a></div>
+
+    <div data-cat="perso" class="reveal">
+    <a href="maison-connectee.html" class="proj-card-link">
+      <div class="proj-card">
+        <div class="proj-img" style="--c1:#1A0E2E;--c2:#5C2A8A;"><img src="maison-connectee.jpg" alt="Maison Connectée" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="proj-body">
+          <span class="proj-badge badge-perso">Personnel</span>
+          <h3>Maison Connectée — Accès Sécurisé</h3>
+          <p>Prototype à double authentification RFID + PIN. Servo-moteur pour la serrure, OLED pour retour utilisateur. Conçu sur Cirkit AI.</p>
+          <div class="proj-tags"><span class="proj-tag">ESP32</span><span class="proj-tag">RFID</span><span class="proj-tag">Double Auth</span><span class="proj-tag">Servo</span></div>
+        </div>
+      </div>
+    </a></div>
+
+    <div data-cat="acad" class="reveal">
+    <a href="modulux.html" class="proj-card-link">
+      <div class="proj-card">
+        <div class="proj-img" style="--c1:#0B1F2A;--c2:#1A5C4A;"><img src="robot-mobile.jpg" alt="MODULUX" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="proj-body">
+          <span class="proj-badge badge-acad">Académique · Jury ✓</span>
+          <h3>MODULUX — Base Roulante Autonome</h3>
+          <p>Base roulante autonome avec châssis 3D imprimé, ESP32, L298N, LiPo 5200mAh et mécanisme de balayage. Présenté devant jury.</p>
+          <div class="proj-tags"><span class="proj-tag">ESP32</span><span class="proj-tag">L298N</span><span class="proj-tag">SolidWorks</span><span class="proj-tag">Jury ✓</span></div>
+        </div>
+      </div>
+    </a></div>
+
   </div>
 </section>
 <footer>
   <span>© 2026 Marvin Lorenzo Kamdem Kamgang</span>
-  <span>Alternance Système Embarqué – Mécatronique – Conception Électronique — Sept. 2026</span>
+  <a href="contact.html">Me contacter →</a>
 </footer>
-<script>const observer = new IntersectionObserver(
+<script>
+const observer = new IntersectionObserver(
   entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
   { threshold: 0.12 }
 );
@@ -236,6 +299,18 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
     const cat = btn.dataset.filter;
     projCards.forEach(card => {
+      card.style.display = cat === 'all' || card.dataset.cat === cat ? 'block' : 'none';
+    });
+  });
+});
+
+// Fix filter for wrapped cards
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.filter;
+    document.querySelectorAll('[data-cat]').forEach(card => {
       card.style.display = cat === 'all' || card.dataset.cat === cat ? 'block' : 'none';
     });
   });
